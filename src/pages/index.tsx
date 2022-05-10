@@ -1,8 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import BlankLayout from '../components/BlankLayout'
+import { NextPageWithLayout } from '../types/global'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div className={""}>
       <Head>
@@ -29,6 +31,10 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+Home.getLayout = (page) => {
+  return <BlankLayout>{page}</BlankLayout>
 }
 
 export default Home
