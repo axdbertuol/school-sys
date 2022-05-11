@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import BlankLayout from '../components/BlankLayout'
+import DashboardLayout from '../components/DashboardLayout'
 import { NextPageWithLayout } from '../types/global'
 
 const Home: NextPageWithLayout = () => {
@@ -13,28 +13,17 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={""}>
-
+      <main className={"h-full"}>
+        x
       </main>
 
-      <footer className={""}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={""}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
     </div>
   )
 }
 
 Home.getLayout = (page) => {
-  return <BlankLayout>{page}</BlankLayout>
+  return <DashboardLayout>{page}</DashboardLayout>
 }
 
 export default Home
