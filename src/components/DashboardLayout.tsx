@@ -6,21 +6,38 @@ interface Props {
 }
 
 export default function DashboardLayout({ children }: Props) {
+  const [isDrawerOpen, setIsDrawerOpen] = React.useState(true)
+  let drawerWidthStyle = 'w-0 border-0'
+  let contentWrapperOpacity = 'opacity-100'
+  if (isDrawerOpen) {
+    drawerWidthStyle = 'w-36'
+    contentWrapperOpacity = 'opacity-50 md:opacity-100'
+  }
+
   return (
-    <>
-      <header className='flex absolute top-0 left-0 w-full h-16 bg-brand-300 bg-opacity-75 shadow-md'>
-        <div></div>
+    <div className='flex'>
+      <header className='flex z-20 absolute top-0 left-0 w-full h-16 bg-brand-300 bg-opacity-75 shadow-md'>
+        <div>
+          <button
+            className='items-center justify-center'
+            onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+          >
+            toggle
+          </button>
+        </div>
       </header>
-      <div className='flex flex-col absolute top-0 left-0 w-36 h-screen border-2'>
+      <div className={'flex flex-col z-10absolute top-0 left-0  h-screen border-2 transition-all ' + drawerWidthStyle}>
         <div className='h-16'>
         </div>
-        <ul >
-          <li>a</li>
-          <li>a</li>
-          <li>a</li>
-        </ul>
+        <div className={isDrawerOpen ? '' : 'hidden'}>
+          <ul className={''}>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+          </ul>
+        </div>
       </div>
-      <div className={`flex flex-col ml-48 mr-12 mt-24 h-full border-2 grow border-slate-600`}>
+      <div className={`flex flex-col z-0 items-center justify-center mx-auto w-full mt-16 h-full border-2 border-slate-600 bg-slate-400 transition-all ${contentWrapperOpacity}`}>
         {children}
         <footer className={"flex items-center border-2 justify-center h-10"}>
           <a
@@ -37,6 +54,6 @@ export default function DashboardLayout({ children }: Props) {
       </div>
 
 
-    </>
+    </div>
   )
 }
