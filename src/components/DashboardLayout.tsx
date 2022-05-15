@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import Header from './Header'
+import Navbar from './Navbar'
 import Drawer from './Drawer'
 import Copyright from './Copyright'
 
@@ -21,10 +21,8 @@ export default function DashboardLayout({ children }: Props) {
 
   return (
     <div className='flex'>
-      <Header handleDrawerOpen={handleDrawerOpen} />
-
-      <Drawer open={isDrawerOpen} handleDrawerOpen={handleDrawerOpen} />
-
+      <Navbar handleDrawerOpen={handleDrawerOpen} />
+      <Drawer open={isDrawerOpen} />
       <div className={`flex flex-col z-0 items-center justify-center mx-auto w-full mt-16 h-full  transition-all ${contentWrapperOpacity}`}>
         {children}
         <footer className={"flex items-center border-2 justify-center h-10"}>
