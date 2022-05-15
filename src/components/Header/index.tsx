@@ -6,8 +6,8 @@ interface Props {
 
 export default function Header({ handleDrawerOpen }: Props) {
   return (
-    <header className='flex z-20 absolute top-0 left-0 w-full h-16 bg-slate-100 bg-opacity-90 shadow-md'>
-      <div className={'h-16 w-44 flex items-center bg-brand-500 '} >
+    <header className='flex z-20 absolute top-0 left-0 w-full h-16 bg-brand-300 bg-opacity-90 shadow-md'>
+      <div className={'h-16 w-44 flex items-center  '} >
         <div className='flex ml-2 justify-between items-center gap-2'>
           <p className='text-slate-50'>Amorinha</p>
 

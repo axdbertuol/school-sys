@@ -6,6 +6,6 @@ interface Props {
 
 export default function BlankLayout({ children }: Props) {
   return (
-    <div>{children}</div>
+    <div className='flex items-center justify-center'>{children}</div>
   )
 }
