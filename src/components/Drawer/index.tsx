@@ -22,12 +22,13 @@ export default function Drawer({ open, handleDrawerOpen }: Props) {
               <button className='pl-2 hover:text-zinc-100 group-hover:transition-all'><span className=''>Dashboard</span></button>
             </Link>
           </li>
-          <li className='group list-item py-2 w-full transition-all rounded-md hover:ring-1  hover:ring-white hover:bg-opacity-30 hover:bg-slate-500'>
+          <li className='group list-item py-2 w-full transition-all rounded-md 
+          hover:ring-1  hover:ring-white hover:bg-opacity-30 hover:bg-slate-500
+         '>
             <Link href={''}>
-              <button className='pl-2 hover:text-zinc-100 group-hover:transition-all'><span className='hover:'>Classes</span></button>
+              <button className='pl-2 hover:text-zinc-100 group-hover:transition-all'><span className=''>Classes</span></button>
             </Link>
           </li>
-
         </ul>
       </div>
     </div>
