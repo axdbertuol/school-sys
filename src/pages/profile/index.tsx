@@ -35,7 +35,7 @@ const userMock: User = {
 
 const Profile: NextPageWithLayout = () => {
   return (
-    <div className='m-5 md:w-1/2'>
+    <div className='m-5 w-4/5 lg:w-1/2'>
       <ProfileList user={userMock} />
     </div>
   )
