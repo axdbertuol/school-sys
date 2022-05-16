@@ -19,18 +19,18 @@ export default function Drawer({ open }: Props) {
       <div className={isHidden}>
         <ul className={'menu  overflow-y-auto text-brand-300 divide-y-2'}>
           <li className='group list-item w-full transition-all'>
-            <Link href={''}>
+            <Link href={'/'}>
               <button className='flex w-full focus:text-zinc-400 group-hover:transition-all'><span className=''>Dashboard</span></button>
             </Link>
           </li>
           <li className='group list-item w-full transition-all'>
-            <Link href={''}>
+            <Link href={'/students'}>
               <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Students</span></button>
             </Link>
           </li>
           <li className='group list-item w-full transition-all'>
-            <Link href={''}>
-              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Classes</span></button>
+            <Link href={'/profile'}>
+              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Profile</span></button>
             </Link>
           </li>
         </ul>
