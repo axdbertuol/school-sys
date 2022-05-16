@@ -25,8 +25,6 @@ const Home: NextPageWithLayout = () => {
           </div>
         </div>
       </main>
-
-
     </>
   )
 }
