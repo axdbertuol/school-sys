@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import DashboardLayout from '../../components/DashboardLayout'
 import ProfileList from '../../components/ProfileList'
@@ -11,6 +12,7 @@ export type User = {
   birthday: string
   role: Role
   userType: UserType
+  picture?: string
 }
 
 export enum UserType {
@@ -30,14 +32,22 @@ const userMock: User = {
   email: 'jmano@email.com',
   birthday: '11-11-1991',
   role: Role.USER,
-  userType: UserType.STUDENT
+  userType: UserType.STUDENT,
+  picture: 'https://api.lorem.space/image/face?w=150&h=220'
 }
 
 const Profile: NextPageWithLayout = () => {
   return (
-    <div className='m-5 w-4/5 lg:w-1/2'>
-      <ProfileList user={userMock} />
-    </div>
+    <>
+      <Head>
+        <title>Your Profile</title>
+        <meta name="description" content="User profile data" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className='m-5 w-4/5 lg:w-1/2'>
+        <ProfileList user={userMock} />
+      </main>
+    </>
   )
 }
 
