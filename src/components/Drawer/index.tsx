@@ -17,22 +17,20 @@ export default function Drawer({ open }: Props) {
       <div className={'h-16 w-44 mb-20'} >
       </div>
       <div className={isHidden}>
-        <ul className={'menu  overflow-y-auto text-base-content divide-y-2'}>
-          <li className='group list-item px-2 w-full transition-all'>
+        <ul className={'menu  overflow-y-auto text-brand-300 divide-y-2'}>
+          <li className='group list-item w-full transition-all'>
             <Link href={''}>
-              <button className='flex w-full hover:text-zinc-900 group-hover:transition-all'><span className=''>Dashboard</span></button>
+              <button className='flex w-full focus:text-zinc-400 group-hover:transition-all'><span className=''>Dashboard</span></button>
             </Link>
           </li>
-          <li className='group list-item px-2 w-full transition-all  
-         '>
+          <li className='group list-item w-full transition-all'>
             <Link href={''}>
-              <button className='w-full  hover:text-zinc-900  group-hover:transition-all'><span className=''>Students</span></button>
+              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Students</span></button>
             </Link>
           </li>
-          <li className='group list-item px-2 w-full transition-all  
-         '>
+          <li className='group list-item w-full transition-all'>
             <Link href={''}>
-              <button className='w-full  hover:text-zinc-900  group-hover:transition-all'><span className=''>Classes</span></button>
+              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Classes</span></button>
             </Link>
           </li>
         </ul>
