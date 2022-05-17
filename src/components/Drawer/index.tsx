@@ -14,16 +14,20 @@ export default function Drawer({ open }: Props) {
   }
   return (
     <div className={`flex flex-col z-10 fixed top-0 left-0 h-screen shadow-lg  bg-base-100 text-stone-900 transition-all ${drawerWidthStyle} `}>
-      <div className={'h-16 w-44 mb-20'} >
-      </div>
+
       <div className={isHidden}>
-        <ul className={'menu  overflow-y-auto text-brand-300 divide-y-2'}>
+        <div className={'h-16 w-44 mb-10'} >
+        </div>
+        <p className='text-primary text-center text-xl mb-10'>
+          <span className='bg-slate-300 rounded p-2'>Amorinha</span>
+        </p>
+        <ul className={'menu  overflow-y-auto text-brand-300 divide-y-2 '}>
           <li className='group list-item w-full transition-all'>
             <Link href={'/'}>
               <button className='flex w-full focus:text-zinc-400 group-hover:transition-all'><span className=''>Dashboard</span></button>
             </Link>
           </li>
-          <li className='group list-item w-full transition-all'>
+          <li className='group list-item w-full transition-all '>
             <Link href={'/students'}>
               <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Students</span></button>
             </Link>
