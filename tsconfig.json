@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2020",
     "lib": [
       "dom",
       "dom.iterable",
@@ -26,5 +26,10 @@
   ],
   "exclude": [
     "node_modules"
+  ],
+  "references": [
+    {
+      "path": "../server"
+    }
   ]
 }

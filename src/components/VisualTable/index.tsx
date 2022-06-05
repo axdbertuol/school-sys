@@ -1,14 +1,15 @@
 import React from 'react'
-import { Student } from '../../pages/students'
+// import { Student } from '../../pages/students'
 import Image from 'next/image'
+import { StudentWithUserData } from '../../../../server/src/types'
 
 interface VTableProps {
-  students: Student[]
+  students: StudentWithUserData[]
   columns: string[]
 }
 
 interface RowProps {
-  data: Student
+  data: StudentWithUserData
 }
 
 const Row = ({ data }: RowProps) => (
@@ -18,18 +19,18 @@ const Row = ({ data }: RowProps) => (
         <input type="checkbox" className="checkbox" />
       </label>
     </th>
-    <td>
+    {/* <td>
       <div className="avatar">
         <div className="mask mask-squircle w-12 h-12">
           <Image src={data.picture ?? ''} alt={'Stud picture'} width={45} height={45} />
         </div>
       </div>
-    </td>
+    </td> */}
     <td className='text-xs'>
       {data.id}
     </td>
-    <td>{data.surname + ', ' + data.name}</td>
-    <td>{data.email}</td>
+    <td>{data.user.name}</td>
+    <td>{data.user.email}</td>
     <td>{data.avgGrade}</td>
     <th>
       <button className="btn btn-ghost btn-xs">details</button>

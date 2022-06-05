@@ -1,42 +1,19 @@
 import Head from 'next/head'
 import React from 'react'
+import useSWR from 'swr'
+import { StudentWithUserData, UserWithoutPassword } from '../../../../server/src/types'
 import DashboardLayout from '../../components/DashboardLayout'
 import ProfileList from '../../components/ProfileList'
 import { NextPageWithLayout } from '../../types/global'
+import { fetcher } from '../../utils'
 
-export type User = {
-  id: string
-  name: string
-  surname: string
-  email: string
-  birthday: string
-  role: Role
-  userType: UserType
-  picture?: string
-}
 
-export enum UserType {
-  STUDENT,
-  TEACHER
-}
-
-export enum Role {
-  USER,
-  ADMIN
-}
-
-const userMock: User = {
-  id: '21312312',
-  name: 'Jones',
-  surname: 'Mano',
-  email: 'jmano@email.com',
-  birthday: '11-11-1991',
-  role: Role.USER,
-  userType: UserType.STUDENT,
-  picture: 'https://api.lorem.space/image/face?w=150&h=220'
-}
-
+const id = '7LKSEXA8u1y';
 const Profile: NextPageWithLayout = () => {
+  // TODO: change this when account service is available
+  const { data, error } = useSWR<UserWithoutPassword>(`http://localhost:3333/students/${id}`, fetcher)
+  if (error) return <div>Failed to load</div>
+  if (!data) return <div>Loading...</div>
   return (
     <>
       <Head>
@@ -45,7 +22,7 @@ const Profile: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='m-5 w-4/5 lg:w-1/2'>
-        <ProfileList user={userMock} />
+        <ProfileList user={data} />
       </main>
     </>
   )
