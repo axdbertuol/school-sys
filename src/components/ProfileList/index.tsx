@@ -11,7 +11,7 @@ interface Props {
 
 let rowClass =
   "flex flex-col sm:flex-row justify-between items-center sm:items-start py-3 border-t border-gray-300 last:border-none"
-let leftClass = "w-full sm:w-1/3 font-medium text-center sm:text-left"
+let leftClass = "w-full sm:w-1/3 font-medium text-center sm:text-left hover:brand"
 let rightClass = "flex-1 text-center sm:text-left"
 
 export default function ProfileList({ user }: Props) {
@@ -35,7 +35,7 @@ export default function ProfileList({ user }: Props) {
             return (
               <div className={rowClass} key={key}>
                 <span className={leftClass}>{key}</span>
-                {/* <span className={rightClass}>{value}</span> */}
+                <span className={rightClass}>{value?.toString()}</span>
               </div>
             )
           })

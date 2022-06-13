@@ -8,7 +8,7 @@ import { NextPageWithLayout } from '../../types/global'
 import { fetcher } from '../../utils'
 
 
-const id = '7LKSEXA8u1y';
+const id = 'JB4UPALZzCu';
 const Profile: NextPageWithLayout = () => {
   // TODO: change this when account service is available
   const { data, error } = useSWR<UserWithoutPassword>(`http://localhost:3333/students/${id}`, fetcher)

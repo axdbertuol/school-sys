@@ -14,7 +14,7 @@ interface RowProps {
 
 const Row = ({ data }: RowProps) => (
   <tr>
-    <th>
+    <th className='hidden md:visible'>
       <label>
         <input type="checkbox" className="checkbox" />
       </label>
@@ -39,17 +39,14 @@ const Row = ({ data }: RowProps) => (
 )
 
 export default function VisualTable({ students, columns }: VTableProps) {
-
-
-
   return (
     <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        <thead>
+      <table className="table w-1/2 text-xs md:text-base mx-auto">
+        <thead >
           <tr>
-            <th>
+            <th className='hidden md:visible'>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input type="checkbox" className="checkbox " />
               </label>
             </th>
             {

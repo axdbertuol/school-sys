@@ -4,10 +4,9 @@ import { NextPageWithLayout } from '../../../types/global'
 
 const Signup: NextPageWithLayout = () => {
   return (
-
     <div className='fixed '>
       <div className='bg-slate-50   rounded-xl bg-opacity-90 my-10 p-10 shadow-md '>
-        <h2 className="text-2xl font-bold text-brand-300">Login to Amorinha</h2>
+        <h2 className="text-2xl font-bold text-brand-300">Signup to Amorinha</h2>
         <div className="mt-8 max-w-md ">
           <form className="grid grid-cols-1 gap-6">
             <label className="block">

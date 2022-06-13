@@ -6,35 +6,32 @@ interface Props {
 }
 
 export default function Drawer({ open }: Props) {
-  let drawerWidthStyle = 'w-0 border-none '
+  let drawerWidthStyle = 'w-0 border-none'
   let isHidden = 'hidden'
   if (open) {
     isHidden = ''
-    drawerWidthStyle = 'w-44'
+    drawerWidthStyle = 'w-44 md:w-64 '
   }
   return (
-    <div className={`flex flex-col z-10 fixed top-0 left-0 h-screen shadow-lg  bg-base-100 text-stone-900 transition-all ${drawerWidthStyle} `}>
-
+    <div className={`flex flex-col z-10 fixed top-0 left-0 h-screen shadow-lg bg-transparent text-stone-900 transition-all  ${drawerWidthStyle} `}>
       <div className={isHidden}>
-        <div className={'h-16 w-44 mb-10'} >
+        <div className={'h-16 w-44 md:w-64 mb-10'} >
         </div>
-        <p className='text-primary text-center text-xl mb-10'>
-          <span className='bg-slate-300 rounded p-2'>Amorinha</span>
-        </p>
-        <ul className={'menu  overflow-y-auto text-brand-300 divide-y-2 '}>
+
+        <ul className={'menu  overflow-y-auto text-primary divide-y-2 '}>
           <li className='group list-item w-full transition-all'>
             <Link href={'/'}>
-              <button className='flex w-full focus:text-zinc-400 group-hover:transition-all'><span className=''>Dashboard</span></button>
+              <button className='flex w-full focus:text-primary-focus group-hover:transition-all'><span className='font-light tracking-wide'>Dashboard</span></button>
             </Link>
           </li>
           <li className='group list-item w-full transition-all '>
             <Link href={'/students'}>
-              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Students</span></button>
+              <button className='w-full  focus:text-primary-focus  group-hover:transition-all'><span className='font-light tracking-wide'>Students</span></button>
             </Link>
           </li>
           <li className='group list-item w-full transition-all'>
             <Link href={'/profile'}>
-              <button className='w-full  focus:text-zinc-400  group-hover:transition-all'><span className=''>Profile</span></button>
+              <button className='w-full  focus:text-primary-focus  group-hover:transition-all'><span className='font-light tracking-wide'>Profile</span></button>
             </Link>
           </li>
         </ul>
